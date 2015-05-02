@@ -1,12 +1,18 @@
-# Remove DRI and privileged args to run on purely CPU.
+# Original: http://fsv.sourceforge.net/
+# GTK2 port: http://fedorchenko.net/fsv2.php
 #
-# docker run \
-#   -v /tmp/.X11-unix:/tmp/.X11-unix \
-#   -v /dev/dri:/dev/dri:rw \
-#   --privileged=true \
-#   -e DISPLAY=$DISPLAY \
-#   -v /home:/data \
-#   fsv2
+# To run:
+#
+#   docker run \
+#     -v /tmp/.X11-unix:/tmp/.X11-unix \
+#     -v /dev/dri:/dev/dri:rw \
+#     --privileged=true \
+#     -e DISPLAY=$DISPLAY \
+#     -v $HOME:/data:ro \
+#     andrewseidl/fsv2
+#
+# fsv2 will visualize `/data` by default. Remove the dri and
+# privileged lines to disable hardware acceleration.
 
 FROM debian:jessie
 MAINTAINER Andrew Seidl <dev@aas.io>
