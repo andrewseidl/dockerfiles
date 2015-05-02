@@ -1,4 +1,4 @@
-# Remove DRI and privileged args to run purely CPU.
+# Remove DRI and privileged args to run on purely CPU.
 #
 # docker run \
 #   -v /tmp/.X11-unix:/tmp/.X11-unix \
@@ -7,7 +7,6 @@
 #   -e DISPLAY=$DISPLAY \
 #   -v /home:/data \
 #   fsv2
-
 
 FROM debian:jessie
 MAINTAINER Andrew Seidl <dev@aas.io>
@@ -27,8 +26,6 @@ RUN cd /usr/src && \
     cd fsv2-1.1.0 && \
     ./configure && \
     make
-
-RUN apt-get install -y \
 
 WORKDIR /data
  
