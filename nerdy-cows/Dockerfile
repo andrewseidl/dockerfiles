@@ -1,6 +1,6 @@
 FROM jess/nerdy
 MAINTAINER Andrew Seidl <dev@aas.io>
 
-RUN echo 'PATH=/usr/games:$PATH' >> $HOME/.bashrc
+ENV PATH /usr/games:$PATH
 
 COPY ./clippy.cow /usr/share/cowsay/cows/
