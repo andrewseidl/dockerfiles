@@ -1,3 +1,5 @@
+# FSV: File System Visualizer
+#
 # Original: http://fsv.sourceforge.net/
 # GTK2 port: http://fedorchenko.net/fsv2.php
 #
